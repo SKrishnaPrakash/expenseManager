@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+     width="100" height="100" viewBox="0 0 200 200">
+     
+     <mask id="cutout">
+        <rect width="100%" height="100%" fill="white"/>
+        <path d="M75 200L75 140L50 140L100 100L145 140L120 140L120 200" 
+            fill="black" stroke="blue" stroke-width="2" stroke-linejoin="round"/>
+        <text x="50%" y="25%"
+            font-size="75"
+            font-weight="bold"
+            text-anchor="middle"
+            dominant-baseline="central"
+            font-family="Segoe UI, Arial, Helvetica, sans-serif"
+            fill="black">
+            $
+        </text>
+     </mask>
+     <circle cx="100" cy="100" r="100" fill="#ff0000cc" mask="url(#cutout)"/>
+  
+</svg>

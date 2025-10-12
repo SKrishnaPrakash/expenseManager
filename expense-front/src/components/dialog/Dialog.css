@@ -1,0 +1,123 @@
+.dialogContainer{
+    background-color: #1c1b1d56;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dialog{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    background-color: #F7F2FA;
+    border-radius: 15px;
+    width: 600px;
+    height: 70vh;
+    box-sizing: border-box;
+}
+.dialog form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.dialogHeader{
+    background-color: #6750A4;
+    border-radius: 15px 15px 0 0;
+    padding: 10px 20px;
+    font-size: 24px;
+    color: #F7F2FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.closeDialog{
+    height: 48px;
+    width: 48px;
+    font-size: 18px;
+    color: #F7F2FA;
+    background-color: #6750A4;
+    border: none;
+    cursor: pointer;
+}
+.dialogContent{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+    min-height: 0;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+.dialogContent label{
+    padding-bottom: 4px;
+    color: #625B71;
+    font-size: 18px;
+}
+.input{
+    height: 48px;
+    width: 100%;
+    place-content: center;
+    background-color: #E6E0E9;
+    border-radius: 8px;
+    border: 2px solid #CAC4D0;
+    outline: none;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.input:hover{
+    border-color: #B69DF8;
+    background-color: #F7F2FA;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+}
+.dialogContent input[type='file']{
+    border: 2px solid #CAC4D0;
+    padding: 0px 0px 0px 0px;
+    background-color: #E6E0E9;
+    cursor: pointer;
+    font-family: "Outfit";
+}
+.dialogContent input[type='file']:hover{
+    border-color: #B69DF8;
+    background-color: #F7F2FA;
+}
+.dialogContent ::file-selector-button{
+    border: none;
+    height: 45px;
+    font-family: "Outfit";
+    background-color: #6750A4;
+    border-radius: 0 8px 8px 0;
+    font-size: 18px;
+    color: #F7F2FA;
+}
+.footer{
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 16px 20px;
+    border-top: 1px solid #CAC4D0;
+}
+.footer button{
+    border: none;
+    background-color: #6750A4;
+    color: #FFFFFF;
+    height: 40px;
+    width: 72px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Outfit";
+    /* padding: 24px; */
+}
+.footer button:hover{
+    box-shadow: 0 0 8px 0px #6750A4;
+}

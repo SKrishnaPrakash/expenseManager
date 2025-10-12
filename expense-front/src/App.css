@@ -1,0 +1,18 @@
+.wholecontent{
+ display: flex;
+ flex-direction: column;
+ height: 100vh;
+ padding: 0px;
+ margin: 0px;
+}
+.menucontainer{
+  display: flex;
+  flex: 1;
+  height: 90%;
+}
+.container1{
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin: 2%;
+}

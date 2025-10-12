@@ -1,0 +1,37 @@
+.inbox{
+    background-color: #E6E0E9;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.inboxTable{
+    background-color: #E6E0E9;
+    height: 100px;
+    width: 100%;
+    border-collapse: collapse;
+}
+.inboxTable thead th{
+    position: sticky;
+    top: 0;
+    width: 200px;
+    padding: 8px 16px;
+    text-align: left;
+    height: 48px;
+}
+.inboxHeader{
+    background-color: #6750A4;
+    color: #F7F2FA;
+    font-size: 18px;
+}
+.inboxRow{
+    background-color: #F3EDF7;
+}
+.inboxRow td{
+    height: 48px;
+    padding: 8px 16px;
+    border-bottom: 1px solid #CAC4D0;
+}
+.inboxRow:hover{
+    color: #1D1B20;
+    background-color: #E8DEF8;
+}

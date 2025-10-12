@@ -1,0 +1,19 @@
+.transactioncontainer{
+    background-color: #F7F2FA;
+    border-radius: 12px;
+    box-shadow: 0 0 8px 0px #6750A4;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 72%;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.header > label{
+    font-size: 24px;
+    place-content: end;
+    padding: 10px;
+}
