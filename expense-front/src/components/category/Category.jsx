@@ -14,16 +14,16 @@ const Category = ({onDialogOpen}) => {
     { id : 'categoryId', label : 'Category Id', type : 'text', display : false, required : false },
     { id : 'categoryName', label : 'Category Name', type : 'text', display : true, required : true },
     { id : 'imagePath', label : 'Image Path', type : 'file', display : true, required : false },
-    { id : 'categoryType', label : 'Category Type', type : 'singleselect', display : false,
-      data : { label: '', options: [ {id:'income', value: 'Income'} , {id: 'expense', value: 'Expense'}], required : true, value: 'expense' }
+    { id : 'categoryType', label : 'Category Type', type : 'singleselect', display : false, required : true, value: 'expense',
+      data : { label: '', options: [ {id:'income', value: 'Income'} , {id: 'expense', value: 'Expense'}]}
     }
   ]
   const incomeCategoryData = [
     { id : 'categoryId', label : 'Category Id', type : 'text', display : false, required : false },
     { id : 'categoryName', label : 'Category Name', type : 'text', display : true, required : true},
     { id : 'imagePath', label : 'Image Path', type : 'file', display : true, required : false },
-    { id : 'categoryType', label : 'Category Type', type : 'singleselect', display : false,
-      data : { label: '', options: [ {id: 'expense', value: 'Expense'}, {id:'income', value: 'Income'} ], required : true, value: 'income' }
+    { id : 'categoryType', label : 'Category Type', type : 'singleselect', display : false, required : true, value: 'income',
+      data : { label: '', options: [ {id: 'expense', value: 'Expense'}, {id:'income', value: 'Income'} ]}
     }
   ]
   const incomeData = [
