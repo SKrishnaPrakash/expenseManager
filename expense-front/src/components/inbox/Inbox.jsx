@@ -15,7 +15,7 @@ const Inbox = ({headers, values}) => {
                     {values.map((value, index)=>(
                         <tr id={index} key={index} className='inboxRow'>
                             {headers.map((header) => (
-                                <td key={header.id}>{value[header.id]}</td>
+                                <td key={header.id} value= {value[header.id]}>{value[header.id]}</td>
                             ))}
                         </tr>
                     ))}

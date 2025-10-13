@@ -8,4 +8,5 @@ import com.expense.expense_backend.model.Category;
 
 @Repository
 public interface CategoryRepo extends JpaRepository<Category, String>{
+    public Category findByCategoryId(String categoryId);
 }

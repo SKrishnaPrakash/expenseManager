@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.expense.expense_backend.model.Category;
 import com.expense.expense_backend.service.CategoryService;
-
+    
 @RestController
 @CrossOrigin(origins = "*")
 public class CategoryController {
