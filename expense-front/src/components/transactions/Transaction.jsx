@@ -34,11 +34,15 @@ const Transaction = ({amount, label, values, onRefresh}) => {
             </div>
             <Inbox 
                 headers={[
-                    {id:'transactionId', label:'Transaction Id'}, 
-                    {id:'transactionCategory', label:'Category'}, 
-                    {id:'source', label:'Source'}, 
-                    {id:'amount', label:'Amount'}, 
-                    {id:'date', label:'Date'}
+                    {id:'transactionId', label:'Transaction Id', type:'text'}, 
+                    {id:'transactionCategory', label:'Category', type:'master', masterData:{
+                        tableName: 'category',
+                        showColumn: 'category_name',
+                        keyColumn: 'category_id'
+                    }}, 
+                    {id:'source', label:'Source', type:'text' }, 
+                    {id:'amount', label:'Amount', type:'number'}, 
+                    {id:'date', label:'Date', type:'date'},
                 ]}
                 values={values}
             />

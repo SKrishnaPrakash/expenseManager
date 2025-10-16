@@ -1,6 +1,14 @@
-export const validateMaster = async (masterInputParam) => {
+import axios from "axios";
+export const validateMaster = async (masterInputParam, keyValue) => {
     try {
-        const response = axios.get("http://localhost:8085/validateMaster", { params: masterInputParam });
+        const response = await axios.post("http://localhost:8085/validateMaster", {
+                tableName: masterInputParam.tableName, 
+                keyColumn: masterInputParam.keyColumn, 
+                showColumn: masterInputParam.showColumn, 
+                keyValue: keyValue
+            }); 
+        console.log(masterInputParam, keyValue)
+        console.log(response);
         return response.data;
     }
     catch (error) {

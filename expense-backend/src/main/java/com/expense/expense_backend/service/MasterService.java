@@ -13,7 +13,7 @@ public class MasterService {
     private EntityManager entityManager;
 
     public Object getMasterData(String tableName, String showColumn, String keyColumn, String keyValue) {
-        String sql = String.format("SELECT %s, %s FROM %s WHERE %s = :keyValue", showColumn, keyColumn, tableName, keyColumn);
+        String sql = String.format("SELECT %s FROM expense_manager.%s WHERE %s = :keyValue", showColumn, tableName, keyColumn);
         Query query = entityManager.createNativeQuery(sql);
         query.setParameter("keyValue", keyValue);
 
