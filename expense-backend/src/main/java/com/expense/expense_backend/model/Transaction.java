@@ -24,6 +24,6 @@ public class Transaction {
 
     private String source;
     private Double amount;
-    private LocalDate date;
+    private LocalDate transactionDate;
 
 }

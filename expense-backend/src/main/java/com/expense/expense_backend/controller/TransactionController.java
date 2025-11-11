@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.expense.expense_backend.dto.TransactionRequest;
 import com.expense.expense_backend.dto.TransactionResponse;
-import com.expense.expense_backend.model.Transaction;
 import com.expense.expense_backend.service.TransactionService;
 
 @RestController
@@ -26,35 +25,22 @@ public class TransactionController {
 
     @GetMapping("/transactions")
     public List<TransactionResponse> getTransactions(){
-        List<Transaction> transactions = transactionService.getTransaction();
-        return transactions.stream().map(t -> {
-            TransactionResponse response = new TransactionResponse();
-            response.setTransactionId(t.getTransactionId());
-            response.setSource(t.getSource());
-            response.setAmount(t.getAmount());
-            response.setDate(t.getDate());
-            response.setTransactionCategory(t.getTransactionCategory() != null ? t.getTransactionCategory().getCategoryId() : null);
-            return response;
-        }).toList();
+        return transactionService.getTransaction();
     }
 
     @GetMapping("/transaction/{transactionId}")
     public TransactionResponse getTransactions(@PathVariable String transactionId){
-        List<Transaction> transactions = transactionService.getTransaction();
-        return transactions.stream().map(t -> {
-            TransactionResponse response = new TransactionResponse();
-            response.setTransactionId(t.getTransactionId());
-            response.setSource(t.getSource());
-            response.setAmount(t.getAmount());
-            response.setDate(t.getDate());
-            response.setTransactionCategory(t.getTransactionCategory() != null ? t.getTransactionCategory().getCategoryId() : null);
-            return response;
-        }).filter(response -> response.getTransactionId().equals(transactionId)).findFirst().orElse(null);
+        return transactionService.getTransaction(transactionId);
     }
 
     @PostMapping("/transaction")
-    public ResponseEntity<Transaction> addTransaction(@RequestBody TransactionRequest transaction){
-        Transaction savedTransaction = transactionService.addTransaction(transaction);
+    public ResponseEntity<TransactionResponse> addTransaction(@RequestBody TransactionRequest transaction){
+        TransactionResponse savedTransaction = transactionService.addTransaction(transaction);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedTransaction);
+    }
+
+    @PostMapping("/transactions/category/{categoryId}")
+    public List<TransactionResponse> getTransactionsByCategory(@PathVariable String categoryId){
+        return transactionService.getTransactionsByCategoryId(categoryId);
     }
 }

@@ -12,6 +12,6 @@ import lombok.Setter;
 public class TransactionRequest {
     private String source;
     private Double amount;
-    private LocalDate date;
+    private LocalDate transactionDate;
     private String transactionCategory;
 }

@@ -42,7 +42,7 @@ const Transaction = ({amount, label, values, onRefresh}) => {
                     }}, 
                     {id:'source', label:'Source', type:'text' }, 
                     {id:'amount', label:'Amount', type:'number'}, 
-                    {id:'date', label:'Date', type:'date'},
+                    {id:'transactionDate', label:'Date', type:'date'},
                 ]}
                 values={values}
             />

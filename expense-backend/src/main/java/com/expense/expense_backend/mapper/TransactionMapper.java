@@ -6,6 +6,7 @@ import org.mapstruct.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.expense.expense_backend.dto.TransactionRequest;
+import com.expense.expense_backend.dto.TransactionResponse;
 import com.expense.expense_backend.model.Transaction;
 import com.expense.expense_backend.repo.CategoryRepo;
 
@@ -28,4 +29,6 @@ public abstract class TransactionMapper {
         transaction.setTransactionCategory(categoryRepo.findById(catId).orElse(null));
     }
 
+    @Mapping(target = "transactionCategory", source = "transactionCategory.categoryId")
+    public abstract TransactionResponse toResponse(Transaction transaction);
 }

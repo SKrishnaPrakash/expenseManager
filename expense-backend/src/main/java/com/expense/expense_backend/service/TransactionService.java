@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.expense.expense_backend.dto.TransactionRequest;
+import com.expense.expense_backend.dto.TransactionResponse;
 import com.expense.expense_backend.mapper.TransactionMapper;
 import com.expense.expense_backend.model.Transaction;
 import com.expense.expense_backend.repo.TransactionRepo;
@@ -18,18 +19,29 @@ public class TransactionService {
     @Autowired
     private TransactionMapper transactionMapper;
 
-    public List<Transaction> getTransaction(){
-        
-        return transactionRepo.findAll();
+    public List<TransactionResponse> getTransaction(){
+        List<Transaction> transactions = transactionRepo.findAll();
+        return transactions.stream().map(t -> {
+            return transactionMapper.toResponse(t);
+        }).toList();
     }
 
-    public Transaction getTransaction(String transactionId){
-        return transactionRepo.getByTransactionId(transactionId);
+    public TransactionResponse getTransaction(String transactionId){
+        Transaction transaction = transactionRepo.getByTransactionId(transactionId);
+        return transactionMapper.toResponse(transaction);
     }
 
-    public Transaction addTransaction(TransactionRequest transaction){
+    public TransactionResponse addTransaction(TransactionRequest transaction){
         Transaction entity = this.transactionMapper.toEntity(transaction);
-        return transactionRepo.save(entity);
+        Transaction savedTransaction = transactionRepo.save(entity);
+        return transactionMapper.toResponse(savedTransaction);
+    }
+
+    public List<TransactionResponse> getTransactionsByCategoryId(String categoryId){
+        List<Transaction> transactions = transactionRepo.findByTransactionCategory_CategoryId(categoryId);
+        return transactions.stream().map(t -> {
+            return transactionMapper.toResponse(t);
+        }).toList();
     }
     
 }

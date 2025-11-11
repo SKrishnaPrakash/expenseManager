@@ -1,4 +1,6 @@
 import axios from "axios";
+
+//masterInputParam = {tableName: 'Table1', keyColumn: 'id', showColumn: 'name'}
 export const validateMaster = async (masterInputParam, keyValue) => {
     try {
         const response = await axios.post("http://localhost:8085/validateMaster", {

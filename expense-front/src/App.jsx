@@ -20,17 +20,18 @@ function App() {
     setDialogData(data);
     setDialogHeader(header);
   }
-  const handleMenuClick = (id) =>{
+  const handleMenuClick = (id, transactionData) =>{
     setMenuItem(id)
+    setTransactionData(transactionData);
   };
   const getTransactions = async () =>{
-      try {
-          const response = await axios.get("http://localhost:8085/transactions")
-          setTransactionData(response.data)
-          console.log(response.data)
-      } catch (error) {
-          console.log(error)
-      }
+    try {
+        const response = await axios.get("http://localhost:8085/transactions")
+        setTransactionData(response.data)
+        console.log(response.data)
+    } catch (error) {
+        console.log(error)
+    }
   }
 
   useEffect( () => {
@@ -43,7 +44,7 @@ function App() {
       <div className="menucontainer">
         <Sidemenu onItemClick={handleMenuClick}/>
         <div className="container1">
-          <Transaction label={menuItem} amount="0" values={transactionData} onRefresh={getTransactions}/>
+          <Transaction label={menuItem} amount="0" values={transactionData}/>
           <Category onDialogOpen={openDialog}/>
         </div>
       </div>
