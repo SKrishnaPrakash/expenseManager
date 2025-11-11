@@ -24,7 +24,7 @@ public class TransactionCategoryViewController {
     }
 
     @GetMapping("/transaction-category-views/category/{categoryId}")
-    public List<TransactionCategoryView> getTransactionCategoryViewsByCategoryId(@PathVariable Long categoryId) {
+    public List<TransactionCategoryView> getTransactionCategoryViewsByCategoryId(@PathVariable String categoryId) {
         return viewService.getTransactionCategoryViewsByCategoryId(categoryId);
     }
 
