@@ -3,6 +3,7 @@ package com.expense.expense_backend.mapper;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.expense.expense_backend.dto.TransactionRequest;
@@ -21,7 +22,7 @@ public abstract class TransactionMapper {
     public abstract Transaction toEntity(TransactionRequest transactionRequest);
 
     @AfterMapping
-    protected void setCategory(Transaction transaction, TransactionRequest transactionRequest) {
+    protected void setCategory(TransactionRequest transactionRequest, @MappingTarget Transaction transaction) {
         // if request provided a category id, fetch and set the Category entity
         if (transactionRequest == null) return;
         String catId = transactionRequest.getTransactionCategory();

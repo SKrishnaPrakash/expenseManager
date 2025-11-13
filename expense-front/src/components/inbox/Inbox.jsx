@@ -13,6 +13,7 @@ const Inbox = ({headers, values}) => {
                     if(header.type === 'master') {
                         const key = `${header.id}_${value[header.id]}`
                         if(!temp[key]) {
+                            console.log(header.masterData, value)
                             const val = await validateMaster(header.masterData, value[header.id])
                             temp[key] = val;
                         }

@@ -2,7 +2,7 @@
     background-color: #E6E0E9;
     height: 100%;
     border-radius: 15px;
-    overflow: hidden;
+    overflow: scroll;
 }
 .inboxTable{
     background-color: #E6E0E9;

@@ -32,7 +32,7 @@ const Category = ({onDialogOpen}) => {
     { id : 'categoryName', label : 'Category Name', type : 'text', display : true, required : false },
     { id : 'source', label : 'Source', type : 'text', display : true, required : false },
     { id : 'amount', label : 'Amount', type : 'number', display : true, required : true},
-    { id : 'date', label : 'Date', type : 'date', display : true, required : true}
+    { id : 'transactionDate', label : 'Date', type : 'date', display : true, required : true}
   ]
   const expenseData = [
     { id : 'transactionId', label : 'Transaction Id', type : 'text', display : false, required : false },
@@ -40,7 +40,7 @@ const Category = ({onDialogOpen}) => {
     { id : 'categoryName', label : 'Category Name', type : 'text', display : true, required : false },
     { id : 'source', label : 'Source', type : 'text', display : true, required : false },
     { id : 'amount', label : 'Amount', type : 'number', display : true, required : true},
-    { id : 'date', label : 'Date', type : 'date', display : true, required : true}
+    { id : 'transactionDate', label : 'Date', type : 'date', display : true, required : true}
   ]
 
   useEffect(() => {

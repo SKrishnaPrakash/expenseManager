@@ -32,7 +32,7 @@ public class TransactionService {
     }
 
     public TransactionResponse addTransaction(TransactionRequest transaction){
-        Transaction entity = this.transactionMapper.toEntity(transaction);
+        Transaction entity = transactionMapper.toEntity(transaction);
         Transaction savedTransaction = transactionRepo.save(entity);
         return transactionMapper.toResponse(savedTransaction);
     }

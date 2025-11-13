@@ -20,13 +20,13 @@ function App() {
     setDialogData(data);
     setDialogHeader(header);
   }
-  const handleMenuClick = (id, transactionData) =>{
-    setMenuItem(id)
+  const handleMenuClick = (label, transactionData) =>{
+    setMenuItem(label)
     setTransactionData(transactionData);
   };
   const getTransactions = async () =>{
     try {
-        const response = await axios.get("http://localhost:8085/transactions")
+        const response = await axios.get("http://localhost:8085/transaction-category-views")
         setTransactionData(response.data)
         console.log(response.data)
     } catch (error) {

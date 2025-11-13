@@ -33,9 +33,9 @@ const Transaction = ({amount, label, values, onRefresh}) => {
                 {(label) && (<label>{label} : {amount}</label>)}
             </div>
             <Inbox 
-                headers={[
+                headers={[  
                     {id:'transactionId', label:'Transaction Id', type:'text'}, 
-                    {id:'transactionCategory', label:'Category', type:'master', masterData:{
+                    {id:'categoryId', label:'Category', type:'master', masterData:{
                         tableName: 'category',
                         showColumn: 'category_name',
                         keyColumn: 'category_id'
